@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f3f4f6;
+}
+
+/* Clerk User Button */
+.cl-avatarBox {
+  width: 2.5rem;
+  height: 2.5rem;
+}
