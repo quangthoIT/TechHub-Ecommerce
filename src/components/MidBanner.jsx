@@ -2,7 +2,7 @@ import banner from "../assets/banner.jpg";
 
 const MidBanner = () => {
   return (
-    <div className="bg-gray-100 md:py-20">
+    <div className="bg-gray-100 md:py-17">
       <div
         className="relative max-w-7xl mx-auto md:rounded-2xl pt-20 bg-cover bg-center h-[550px] md:h-[600px] "
         style={{
