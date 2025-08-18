@@ -1,17 +1,18 @@
-import { useContext, useEffect } from "react";
-import { DataContext } from "../context/DataContext";
+import { useEffect } from "react";
+import { getData } from "../context/DataContext.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Category from "./Category.jsx";
 
 const Carousel = () => {
-  const { data, fetchAllProducts } = useContext(DataContext);
-  console.log(data);
+  const { data, fetchAllProducts } = getData();
+  // console.log(data);
 
   useEffect(() => {
     fetchAllProducts();
-  }, [fetchAllProducts]);
+  }, []);
 
   const SamplePrevArrow = ({ className, onClick }) => (
     <div onClick={onClick} className={`${className} z-10`}>
@@ -83,6 +84,7 @@ const Carousel = () => {
           );
         })}
       </Slider>
+      <Category />
     </div>
   );
 };
