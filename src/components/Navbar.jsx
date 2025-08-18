@@ -27,7 +27,7 @@ const Navbar = ({
         <div className="flex gap-7 items-center">
           <Link to="/">
             <h1 className="font-bold text-3xl">
-              <span className="text-red-500 font-serif">T</span>echHub
+              <span className="text-red-500 font-serif text-4xl">T</span>echHub
             </h1>
           </Link>
           <div className="flex gap-2 cursor-pointer text-gray-700 items-center">
