@@ -102,7 +102,7 @@ const Products = () => {
         ) : (
           <div className="flex items-center justify-center h-[400px]">
             <video muted autoPlay loop width={200}>
-              <source src={Loading} type="video/mp4" />
+              <source src={Loading} type="video/webm" />
             </video>
           </div>
         )}
@@ -112,4 +112,3 @@ const Products = () => {
 };
 
 export default Products;
-//2:51:00
