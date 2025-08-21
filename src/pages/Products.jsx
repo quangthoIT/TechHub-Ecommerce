@@ -5,7 +5,7 @@ import Loading from "../assets/Loading.webm";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
 import Lottie from "lottie-react";
-import notfound from "../assets/not found.json"
+import notfound from "../assets/not found.json";
 
 const Products = () => {
   const { data, fetchAllProducts } = getData();
@@ -18,6 +18,7 @@ const Products = () => {
 
   useEffect(() => {
     fetchAllProducts();
+    window.scrollTo(0, 0);
   }, []);
 
   const handleCategoryChange = (e) => {
