@@ -1,23 +1,7 @@
-import { useContext, useEffect } from "react";
 import { getData } from "../context/DataContext";
 
 const Category = () => {
-  const { data, fetchAllProducts } = getData();
-
-  const getUniqueCategory = (data, property) => {
-    let newVal = data?.map((curElem) => {
-      return curElem[property];
-    });
-    newVal = [...new Set(newVal)];
-    return newVal;
-  };
-
-  const categoryOnlyData = getUniqueCategory(data, "category");
-  console.log(categoryOnlyData);
-
-  useEffect(() => {
-    fetchAllProducts();
-  }, []);
+  const { categoryOnlyData } = getData();
 
   return (
     <div className="bg-[#101829]">
@@ -25,7 +9,7 @@ const Category = () => {
         {categoryOnlyData.map((item, index) => {
           return (
             <div key={index}>
-              <button className="text-white uppercase bg-gradient-to-r from-red-500 to-purple-700 w-[120px] px-3 py-2 rounded-md hover:scale-105 cursor-pointer">
+              <button className="text-white uppercase bg-gradient-to-r from-red-500 to-purple-700 w-[120px] py-2 px-3 md:py-3 md:px-4 rounded-md hover:scale-105 cursor-pointer">
                 {item}
               </button>
             </div>

@@ -67,7 +67,7 @@ const Carousel = () => {
                   <p className="md:w-[600px] text-gray-400 line-clamp-4 pr-7">
                     {item.description}
                   </p>
-                  <button className="bg-gradient-to-r from-red-500  to-purple-700 text-white px-4 py-2 rounded-xl cursor-pointer hover:scale-105">
+                  <button className="bg-gradient-to-r from-red-500  to-purple-700 text-white  py-2 px-4 md:py-3 md:px-6 rounded-xl cursor-pointer hover:scale-105">
                     Shop Now
                   </button>
                 </div>
