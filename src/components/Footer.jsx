@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,9 +23,19 @@ const Footer = () => {
           <p className="mt-4 text-sm">
             Powering Your World with the Best in Electronics.
           </p>
-          <p className="mt-3 text-sm">Address: Ho Chi Minh City, Vietnam</p>
-          <p className="mt-1 text-sm">Email: techhub@gmail.com</p>
-          <p className="mt-1 text-sm">Phone: (+84) 123-456-789</p>
+          <div className="flex items-end gap-2 mt-3 text-sm">
+            <MapPin className="w-5 h-5" />
+            <span>Ho Chi Minh City, Vietnam</span>
+          </div>
+          <div className="flex items-end gap-2 mt-3 text-sm">
+            <Mail className="w-5 h-5" /> <span>techhub@gmail.com</span>
+          </div>
+          <div className="flex items-end gap-2 mt-3 text-sm">
+            <Phone className="w-5 h-5" />
+            <span>(+84) 123-456-789</span>
+          </div>
+
+          <p className="mt-1 text-sm"></p>
         </div>
         {/* Customer Service Link */}
         <div className="mb-6 md:mb-0">
