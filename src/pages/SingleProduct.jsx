@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import Loading from "../assets/Loading.webm";
 import Breadcrums from "../components/Breadcrums";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const SingleProduct = () => {
   const params = useParams();
+  const { addtoCart, cartItem } = useCart();
   const [SingleProduct, setSingleProduct] = useState("");
 
   const getSingleProduct = async () => {
@@ -86,7 +88,10 @@ const SingleProduct = () => {
               </div>
               {/* Add to Cart Button */}
               <div className="mt-2">
-                <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold text-lg py-2 px-6 rounded-lg transition duration-300 cursor-pointer">
+                <button
+                  className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold text-lg py-2 px-6 rounded-lg transition duration-300 cursor-pointer"
+                  onClick={() => addtoCart(SingleProduct)}
+                >
                   <ShoppingCart className="w-6 h-6" /> Add to Cart
                 </button>
               </div>
