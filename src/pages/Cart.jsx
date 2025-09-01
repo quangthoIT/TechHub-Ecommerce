@@ -152,7 +152,8 @@ const Cart = () => {
                     <input
                       type="text"
                       placeholder="Enter your full name"
-                      value={user.fullName}
+                      // value={user.fullName} // Lấy tên người dùng từ tài khoản
+                      value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       className="bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
                     ></input>
