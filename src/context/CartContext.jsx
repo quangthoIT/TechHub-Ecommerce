@@ -1,20 +1,27 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
   const [cartItem, setCartItem] = useState([]);
-  const addtoCart = (product) => {
+  const addtoCart = (product, quantity = 1) => {
+    // Ép price từ API về number
+    const numericPrice = Number(product.price);
     const itemInCart = cartItem.find((item) => item.id === product.id);
     if (itemInCart) {
-      // Increase the quantity of the existing item in the cart
+      // Nếu đã có thì cộng thêm quantity mới
       const updatedCart = cartItem.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
       );
       setCartItem(updatedCart);
+      toast.success("Product quantity is updated !");
     } else {
       // Add the new item to the cart
-      setCartItem([...cartItem, { ...product, quantity: 1 }]);
+      setCartItem([...cartItem, { ...product, quantity }]);
+      toast.success("Product is added to cart !");
     }
   };
 
@@ -26,8 +33,10 @@ export const CartProvider = ({ children }) => {
             let newUnit = item.quantity;
             if (action === "increase") {
               newUnit = item.quantity + 1;
+              toast.success("Quantity is increased !");
             } else if (action === "decrease") {
               newUnit = item.quantity - 1;
+              toast.success("Quantity is decreased !");
             }
             return newUnit > 0 ? { ...item, quantity: newUnit } : null;
           }
@@ -39,6 +48,7 @@ export const CartProvider = ({ children }) => {
 
   const deleteItem = (productId) => {
     setCartItem(cartItem.filter((item) => item.id !== productId));
+    toast.success("Product is removed from cart !");
   };
 
   return (

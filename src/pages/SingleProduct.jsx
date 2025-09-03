@@ -9,6 +9,7 @@ import { useCart } from "../context/CartContext";
 const SingleProduct = () => {
   const params = useParams();
   const { addtoCart, cartItem } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const [SingleProduct, setSingleProduct] = useState("");
 
   const getSingleProduct = async () => {
@@ -82,7 +83,8 @@ const SingleProduct = () => {
                 <input
                   type="number"
                   min={1}
-                  defaultValue={1}
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
                   className="w-20 border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-red-500"
                 />
               </div>
@@ -90,7 +92,7 @@ const SingleProduct = () => {
               <div className="mt-2">
                 <button
                   className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold text-lg py-2 px-6 rounded-lg transition duration-300 cursor-pointer"
-                  onClick={() => addtoCart(SingleProduct)}
+                  onClick={() => addtoCart(SingleProduct, quantity)}
                 >
                   <ShoppingCart className="w-6 h-6" /> Add to Cart
                 </button>

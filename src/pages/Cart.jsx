@@ -107,7 +107,7 @@ const Cart = () => {
                       <div>
                         <h1 className="w-[300px] line-clamp-2">{item.title}</h1>
                         <p className="font-semibold text-red-500 text-lg">
-                          ${item.price * item.quantity}
+                          ${item.price}
                         </p>
                       </div>
                     </div>
