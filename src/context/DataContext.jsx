@@ -21,7 +21,7 @@ export const DataProvider = ({ children }) => {
     let newVal = data?.map((curElem) => {
       return curElem[property];
     });
-    newVal = ["All", ...new Set(newVal)];
+    newVal = [...new Set(newVal)];
     return newVal;
   };
 

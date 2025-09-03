@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
       toast.success("Product quantity is updated !");
     } else {
       // Add the new item to the cart
-      setCartItem([...cartItem, { ...product, quantity }]);
+      setCartItem([...cartItem, { ...product, price: numericPrice, quantity }]);
       toast.success("Product is added to cart !");
     }
   };
