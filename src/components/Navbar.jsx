@@ -4,11 +4,13 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
-import { MapPin, ShoppingCart } from "lucide-react";
+import { MapPin, MenuIcon, ShoppingCart } from "lucide-react";
 import { CgClose } from "react-icons/cg";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useState } from "react";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 const Navbar = ({
   location,
@@ -19,12 +21,13 @@ const Navbar = ({
   locationError,
 }) => {
   const { cartItem } = useCart();
+  const [openNav, setOpenNav] = useState(false);
 
   const toggleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
   return (
-    <div className="bg-white py-3 shadow-2xl">
+    <div className="bg-white py-3 shadow-2xl px-4 md:px-0">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex gap-7 items-center">
@@ -33,7 +36,7 @@ const Navbar = ({
               <span className="text-red-500 font-serif text-4xl">T</span>echHub
             </h1>
           </Link>
-          <div className="flex gap-2 cursor-pointer text-gray-700 items-center">
+          <div className="md:flex gap-2 cursor-pointer text-gray-700 items-center hidden">
             <MapPin className="text-red-500" />
             <span className="font-semibold ">
               {location ? (
@@ -71,7 +74,7 @@ const Navbar = ({
         </div>
         {/* Menu */}
         <nav className="flex gap-7 items-center">
-          <ul className="flex gap-7 items-center text-xl font-semibold ">
+          <ul className="md:flex gap-7 items-center text-xl font-semibold hidden">
             <NavLink
               to={"/"}
               className={({ isActive }) =>
@@ -127,7 +130,7 @@ const Navbar = ({
               {cartItem.length}
             </span>
           </Link>
-          <div className="flex items-center">
+          <div className="hidden md:block">
             <SignedOut>
               <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer" />
             </SignedOut>
@@ -135,8 +138,20 @@ const Navbar = ({
               <UserButton />
             </SignedIn>
           </div>
+          {openNav ? (
+            <MenuIcon
+              className="cursor-pointer md:hidden"
+              onClick={() => setOpenNav(false)}
+            />
+          ) : (
+            <MenuIcon
+              className="cursor-pointer md:hidden"
+              onClick={() => setOpenNav(true)}
+            />
+          )}
         </nav>
       </div>
+      <ResponsiveMenu openNav={openNav} setOpenNav={setOpenNav} />
     </div>
   );
 };
