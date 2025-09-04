@@ -9,14 +9,14 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Info Section */}
           <div className="text-gray-700 space-y-4">
-            <div>
+            <div className="space-y-1">
               <h3 className="text-2xl font-semibold">Contact Info</h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 text-base">
                 Have a question or need support? We're here to help you with
                 your electronics journey.
               </p>
             </div>
-            <div>
+            <div className="space-y-1 text-base">
               <p>
                 <strong>Address:</strong> Ho Chi Minh City, Vietnam
               </p>
@@ -32,32 +32,32 @@ const Contact = () => {
           {/* Form Section */}
           <form className="space-y-6">
             <div>
-              <label className="block text-gray-700 mb-1">Your Name</label>
+              <label className="block text-gray-900 mb-1">Your Name</label>
               <input
                 type="text"
                 placeholder="User Name"
-                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-md placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-lg placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-1">Email Address</label>
+              <label className="block text-gray-900 mb-1">Email Address</label>
               <input
                 type="email"
                 placeholder="user@example.com"
-                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-md placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-lg placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-1">Your Message</label>
+              <label className="block text-gray-900 mb-1">Your Message</label>
               <textarea
                 rows="4"
                 placeholder="Type your message"
-                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-md placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                className="w-full px-4 py-2 bg-gray-100 border border-gray-200 text-gray-500 rounded-lg placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-red-500 text-white font-semibold py-2 rounded-md hover:opacity-90 transition-all duration-300 cursor-pointer hover:bg-red-600"
+              className="w-full bg-red-500 text-white font-semibold py-2 md:py-3 rounded-lg hover:opacity-90 transition-all duration-300 cursor-pointer hover:bg-red-600"
             >
               Send Message
             </button>

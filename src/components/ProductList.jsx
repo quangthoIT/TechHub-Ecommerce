@@ -10,7 +10,7 @@ const ProductList = ({ product }) => {
         <img
           src={product.image}
           alt={product.title}
-          className="h-50 w-50 rounded-md cursor-pointer hover:scale-101 transition-all"
+          className="h-50 w-50 rounded-lg cursor-pointer hover:scale-101 transition-all"
           onClick={() => navigate(`/products/${product.id}`)}
         />
         <div className="space-y-2">
@@ -31,7 +31,7 @@ const ProductList = ({ product }) => {
             <span className="font-semibold">Tomorrow, 5 September</span>
           </p>
           <button
-            className="bg-red-500 hover:bg-red-600 text-white text-lg font-semibold justify-center items-center py-1 px-3 rounded-md transition duration-300 cursor-pointer"
+            className="bg-red-500 hover:bg-red-600 text-white text-lg font-semibold justify-center items-center py-1 px-3 rounded-lg transition duration-300 cursor-pointer"
             onClick={() => addtoCart(product)}
           >
             Add to Cart

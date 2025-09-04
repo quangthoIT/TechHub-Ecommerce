@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-20">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-8">
-        <h1 className="text-4xl font-bold  text-center">About TechHub</h1>
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-8 text-justify">
+        <h1 className="text-4xl font-bold text-center">About TechHub</h1>
 
         <p className="text-gray-700 text-lg">
           Welcome to <span className="font-semibold text-red-500">TechHub</span>
@@ -28,7 +28,7 @@ const About = () => {
           <h2 className="text-2xl font-semibold text-red-500">
             Why Choose TechHub?
           </h2>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2">
+          <ul className="list-disc text-base pl-6 text-gray-700 space-y-2">
             <li>Premium electronics from trusted global brands</li>
             <li>Ultra-fast, secure delivery to your door</li>
             <li>Dedicated customer support, anytime you need</li>
@@ -45,20 +45,21 @@ const About = () => {
           </p>
         </div>
 
-        <div className="text-center mt-10">
-          <h3 className="text-xl font-semibold text-red-500 mb-2">
+        <div className="space-y-6">
+          <h2 className="text-2xl font-semibold text-red-500">
             Join the TechHub Family
-          </h3>
-          <p className="text-gray-700 mb-4">
+          </h2>
+          <p className="text-gray-700 text-base">
             Whether you’re a tech explorer, a driven professional, or simply
-            searching for something smart and stylish — TechHub is built for
-            you.
+            searching for something smart and stylish.
           </p>
-          <Link to={"/products"}>
-            <button className="bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition duration-300 cursor-pointer">
-              Start Shopping
-            </button>
-          </Link>
+          <div className="flex justify-center">
+            <Link to={"/products"}>
+              <button className="bg-red-500 text-white mt-2 py-2 px-3 md:py-3 md:px-4 rounded-lg hover:bg-red-600 transition duration-300 cursor-pointer">
+                Start Shopping
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

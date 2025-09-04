@@ -51,7 +51,7 @@ const Navbar = ({
             <FaCaretDown onClick={toggleDropdown} />
           </div>
           {openDropdown ? (
-            <div className="w-[230px] h-max shadow-2xl z-50 bg-white fixed top-16 left-60 border-2 p-4 border-gray-100 rounded-md">
+            <div className="w-[230px] h-max shadow-2xl z-50 bg-white fixed top-16 left-60 border-2 p-4 border-gray-100 rounded-lg">
               <h1 className="font-semibold mb-4 text-xl flex justify-between items-center">
                 Change Location
                 <span onClick={toggleDropdown} className="cursor-pointer">
@@ -60,7 +60,7 @@ const Navbar = ({
               </h1>
               <button
                 onClick={getLocation}
-                className="bg-red-500 text-white p-2 rounded-md cursor-pointer hover:bg-red-600 transition-all"
+                className="bg-red-500 text-white p-2 rounded-lg cursor-pointer hover:bg-red-600 transition-all"
               >
                 {loadingLocation ? "Taking position..." : "Detect My Location"}
               </button>
@@ -132,7 +132,7 @@ const Navbar = ({
           </Link>
           <div className="hidden md:block">
             <SignedOut>
-              <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer" />
+              <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-lg cursor-pointer" />
             </SignedOut>
             <SignedIn>
               <UserButton />

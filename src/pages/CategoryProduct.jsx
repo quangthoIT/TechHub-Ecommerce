@@ -30,7 +30,7 @@ const CategoryProduct = () => {
       {searchData.length > 0 ? (
         <div className="max-w-7xl mx-auto mt-10 mb-10 px-4">
           <button
-            className="bg-gray-800 text-white hover:bg-gray-900 rounded-md px-4 py-2 flex items-center gap-2 cursor-pointer mb-5"
+            className="bg-gray-800 text-white hover:bg-gray-900 rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer mb-5"
             onClick={() => navigate(-1)}
           >
             <ChevronLeft /> Back

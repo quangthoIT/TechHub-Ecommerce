@@ -31,7 +31,7 @@ const FilterSection = ({
         placeholder="Search..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="bg-white p-2 rounded-md border-gray-400 border-1"
+        className="bg-white p-2 rounded-lg border-gray-400 border-1"
       />
 
       {/* Category Only Data */}
@@ -61,7 +61,7 @@ const FilterSection = ({
         id=""
         value={brand}
         onChange={handleBrandChange}
-        className="bg-white p-2 border-gray-200 border-2 rounded-md w-full mt-3 cursor-pointer"
+        className="bg-white p-2 border-gray-200 border-2 rounded-lg w-full mt-3 cursor-pointer"
       >
         {sortedBrands?.map((item, index) => {
           return (
@@ -97,7 +97,7 @@ const FilterSection = ({
       <select
         value={sortOption}
         onChange={(e) => setSortOption(e.target.value)}
-        className="bg-white p-2 border-gray-200 border-2 rounded-md w-full mt-3 cursor-pointer"
+        className="bg-white p-2 border-gray-200 border-2 rounded-lg w-full mt-3 cursor-pointer"
       >
         <option value="default">Default</option>
         <option value="priceLowHigh">Price: Low → High</option>
@@ -108,7 +108,7 @@ const FilterSection = ({
 
       {/* Button Reset */}
       <button
-        className="bg-red-500 hover:bg-red-600 text-white font-semibold w-full py-2 px-4 rounded-lg transition duration-300 cursor-pointer mt-3"
+        className="bg-red-500 hover:bg-red-600 text-white font-semibold w-full py-2 px-3 rounded-lg transition duration-300 cursor-pointer mt-4"
         onClick={() => {
           setSearch("");
           setCategory("All");

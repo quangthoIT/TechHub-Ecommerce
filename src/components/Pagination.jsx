@@ -23,7 +23,7 @@ const Pagination = ({ page, pageHandler, dynamicPage }) => {
         onClick={() => pageHandler(page - 1)}
         className={`${
           page === 1 ? "bg-red-400" : "bg-red-500 hover:bg-red-600"
-        } text-white px-3 py-1 rounded-md cursor-pointer `}
+        } text-white px-3 py-1 rounded-lg cursor-pointer `}
       >
         Prev
       </button>
@@ -45,7 +45,7 @@ const Pagination = ({ page, pageHandler, dynamicPage }) => {
         onClick={() => pageHandler(page + 1)}
         className={`${
           page === dynamicPage ? "bg-red-400" : "bg-red-500 hover:bg-red-600"
-        } text-white px-3 py-1 rounded-md cursor-pointer`}
+        } text-white px-3 py-1 rounded-lg cursor-pointer`}
       >
         Next
       </button>

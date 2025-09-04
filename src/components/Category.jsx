@@ -12,7 +12,7 @@ const Category = () => {
           return (
             <div key={index}>
               <button
-                className="text-white uppercase bg-gradient-to-r from-red-500 to-purple-700 w-[120px] py-2 px-3 md:py-3 md:px-4 rounded-md hover:scale-105 cursor-pointer"
+                className="text-white uppercase bg-gradient-to-r from-red-500 to-purple-700 w-[120px] py-2 px-3 md:py-3 md:px-4 rounded-lg hover:scale-105 cursor-pointer"
                 onClick={() => navigate(`/category/${item}`)}
               >
                 {item}

@@ -67,7 +67,7 @@ const SingleProduct = () => {
                 <span className="line-through text-gray-500 ml-2">
                   ${OrginalPrice}
                 </span>
-                <span className="bg-red-500 text-white p-2 rounded-md ml-2">
+                <span className="bg-red-500 text-white p-2 rounded-lg ml-2">
                   {SingleProduct.discount}% discount
                 </span>
               </p>
@@ -85,7 +85,7 @@ const SingleProduct = () => {
                   min={1}
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
-                  className="w-20 border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-red-500"
+                  className="w-20 border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-red-500"
                 />
               </div>
               {/* Add to Cart Button */}

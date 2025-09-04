@@ -102,7 +102,7 @@ const Cart = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-20 h-20 rounded-md"
+                        className="w-20 h-20 rounded-lg"
                       />
                       <div>
                         <h1 className="w-[300px] line-clamp-2">{item.title}</h1>
@@ -112,7 +112,7 @@ const Cart = () => {
                       </div>
                     </div>
                     {/* Quantity */}
-                    <div className="bg-red-500 text-white flex gap-4 p-2 rounded-md font-bold text-xl">
+                    <div className="bg-red-500 text-white flex gap-4 p-2 rounded-lg font-bold text-xl">
                       <button
                         className="cursor-pointer"
                         onClick={() => updateQuantity(item.id, "decrease")}
@@ -141,7 +141,7 @@ const Cart = () => {
 
             {/* Delivery Info */}
             <div className="grid grid-cols-2 gap-10 ">
-              <div className="bg-gray-100 rounded-md p-5 mt-5 space-y-2 shadow-md">
+              <div className="bg-gray-100 rounded-lg p-5 mt-5 space-y-2 shadow-md">
                 <h1 className="font-bold text-xl">Delivery Info</h1>
                 {/* Full Name + Phone */}
                 <div className="flex gap-4 mt-4">
@@ -155,7 +155,7 @@ const Cart = () => {
                       // value={user.fullName} // Lấy tên người dùng từ tài khoản
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      className="bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
+                      className="bg-gray-50 border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
                     ></input>
                   </div>
 
@@ -168,7 +168,7 @@ const Cart = () => {
                       placeholder="Enter your phone number"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
-                      className="bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
+                      className="bg-gray-50 border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
                     ></input>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ const Cart = () => {
                       Province/City <span className="text-red-500">*</span>
                     </label>
                     <select
-                      className={`bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 ${
+                      className={`bg-gray-50 border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 ${
                         province ? "text-black" : "text-gray-500"
                       }`}
                       value={province}
@@ -201,7 +201,7 @@ const Cart = () => {
                       Ward/Commune <span className="text-red-500">*</span>
                     </label>
                     <select
-                      className={`bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 ${
+                      className={`bg-gray-50 border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 ${
                         ward ? "text-black" : "text-gray-500"
                       }`}
                       value={ward}
@@ -226,20 +226,20 @@ const Cart = () => {
                     placeholder="House Number, Street"
                     value={detailedAddress}
                     onChange={(e) => setDetailedAddress(e.target.value)}
-                    className="bg-gray-50 border border-gray-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
+                    className="bg-gray-50 border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
                   />
                 </div>
                 {/* Back + Checkout */}
                 <div className="flex justify-end gap-2 mt-5">
                   <button
                     onClick={() => navigate(-1)}
-                    className="bg-white text-black border border-gray-200 px-4 py-2 rounded-md cursor-pointer hover:text-white hover:bg-red-600 transition-all duration-300"
+                    className="bg-white text-black border border-gray-200 px-4 py-2 rounded-lg cursor-pointer hover:text-white hover:bg-red-600 transition-all duration-300"
                   >
                     Back
                   </button>
                   <button
                     onClick={handleCheckout}
-                    className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-all duration-300 cursor-pointer"
+                    className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-all duration-300 cursor-pointer"
                   >
                     Checkout
                   </button>
@@ -247,7 +247,7 @@ const Cart = () => {
               </div>
 
               {/* Order Summary */}
-              <div className="bg-white rounded-md p-5 mt-5 space-y-2 border border-gray-100 shadow-md h-max">
+              <div className="bg-white rounded-lg p-5 mt-5 space-y-2 border border-gray-100 shadow-md h-max">
                 <h1 className="font-bold text-xl">Order Summary</h1>
                 {/* Total */}
                 <div className="flex gap-2 justify-between items-center text-gray-900 mt-3">
@@ -296,15 +296,15 @@ const Cart = () => {
                     <input
                       type="text"
                       placeholder="Enter code"
-                      className="p-2 rounded-md w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-400
+                      className="p-2 rounded-lg w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-400
                       placeholder:text-gray-500 placeholder:transition-opacity placeholder:duration-800 focus:placeholder:opacity-0"
                     />
-                    <button className="bg-white text-black border border-gray-200 px-4 py-2 rounded-md cursor-pointer hover:bg-red-600  hover:text-white transition-all duration-300">
+                    <button className="bg-white text-black border border-gray-200 px-4 py-2 rounded-lg cursor-pointer hover:bg-red-600  hover:text-white transition-all duration-300">
                       Apply
                     </button>
                   </div>
                 </div>
-                <button className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-all duration-300 cursor-pointer mt-3">
+                <button className="w-full bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-all duration-300 cursor-pointer mt-3">
                   Proceed to Checkout
                 </button>
               </div>
@@ -319,7 +319,7 @@ const Cart = () => {
           </h1>
           <img src={emptyCart} alt="empty Cart" className="w-[450px]" />
           <button
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md cursor-pointer"
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-3 md:py-3 md:px-4 rounded-lg cursor-pointer"
             onClick={() => navigate("/products")}
           >
             Continue Shopping
