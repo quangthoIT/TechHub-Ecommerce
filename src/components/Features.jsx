@@ -10,12 +10,12 @@ const Features = () => {
   return (
     <div className="bg-gray-100 p-6 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+        <div className="grid grid-cols-1 gap-y-6 md:grid-cols-4 md:gap-x-8">
           {features.map((feature, index) => {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center text-center sm:text-left"
+                className="flex items-center md:justify-center md:text-left ml-15"
               >
                 <feature.icon
                   className="flex-shrink-0 h-10 w-10 text-gray-600"
