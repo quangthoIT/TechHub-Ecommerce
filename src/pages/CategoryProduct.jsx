@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../assets/Loading.webm";
 import { ChevronLeft } from "lucide-react";
 import axios from "axios";
@@ -9,7 +9,7 @@ const CategoryProduct = () => {
   const [searchData, setSearchData] = useState([]);
   const params = useParams();
   const category = params.category;
-  console.log(category);
+  const navigate = useNavigate();
   const getFilterData = async () => {
     try {
       const res = await axios.get(
@@ -29,7 +29,10 @@ const CategoryProduct = () => {
     <div>
       {searchData.length > 0 ? (
         <div className="max-w-7xl mx-auto mt-10 mb-10 px-4">
-          <button className="bg-gray-800 text-white hover:bg-gray-900 rounded-md px-4 py-2 flex items-center gap-2 cursor-pointer mb-5">
+          <button
+            className="bg-gray-800 text-white hover:bg-gray-900 rounded-md px-4 py-2 flex items-center gap-2 cursor-pointer mb-5"
+            onClick={() => navigate(-1)}
+          >
             <ChevronLeft /> Back
           </button>
           {searchData.map((product, index) => {

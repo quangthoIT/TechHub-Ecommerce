@@ -5,9 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Category from "./Category.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Carousel = () => {
   const { data, fetchAllProducts } = getData();
+  const navigate = useNavigate();
   // console.log(data);
 
   useEffect(() => {
@@ -67,7 +69,10 @@ const Carousel = () => {
                   <p className="md:w-[600px] text-sm md:text-lg text-gray-400 md:line-clamp-4 line-clamp-3 pr-7">
                     {item.description}
                   </p>
-                  <button className="bg-gradient-to-r from-red-500  to-purple-700 text-white py-2 px-4 md:py-3 md:px-6 rounded-lg cursor-pointer hover:scale-105">
+                  <button
+                    className="bg-gradient-to-r from-red-500  to-purple-700 text-white py-2 px-4 md:py-3 md:px-6 rounded-lg cursor-pointer hover:scale-105"
+                    onClick={() => navigate(`/products/${item.id}`)}
+                  >
                     Shop Now
                   </button>
                 </div>
